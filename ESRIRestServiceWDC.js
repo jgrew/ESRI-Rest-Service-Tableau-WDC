@@ -54,7 +54,7 @@
 	};
 
 	myConnector.getData = function(table, doneCallback) {
-		$.getJSON(tableau.connectionData + '/query?where=OBJECTID>3D1&outFields=*&f=pjson', function(resp) {
+		$.getJSON(tableau.connectionData + '/query?where=OBJECTID>3D1&outFields=*&outSR=4326&f=pjson', function(resp) {
 			// tableau.log(resp);
 
 			// tableau.log(table);
