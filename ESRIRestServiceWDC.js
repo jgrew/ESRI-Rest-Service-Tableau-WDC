@@ -82,8 +82,8 @@
 					}
 
 					if (table.tableInfo.columns[j].dataType == 'datetime') {
-						value = new Date(value);
-						value = value.toString('YYYY-MM-DD HH:mm:ss');
+						value = new Date(value).toLocaleString();
+						tableau.log(value);
 					}
 
 
@@ -97,7 +97,7 @@
 				tableData.push(dataObject);
 			}
 
-			tableau.log(tableData);
+			//tableau.log(tableData);
 		table.appendRows(tableData);
 		doneCallback();
 
