@@ -61,7 +61,7 @@
 			var feature_data = resp.features;
 			var tableData = [];
 
-			tableau.log(feature_data.length);
+			//tableau.log(feature_data.length);
 
 			for (var i = 0, len = feature_data.length; i < len; i++) {
 
@@ -82,8 +82,9 @@
 					}
 
 					if (table.tableInfo.columns[j].dataType == 'datetime') {
-						value = new Date(value).toLocaleString();
-						tableau.log(value);
+						value = new Date(value);
+						//tableau.log(value);
+						value = value.getFullYear() + '-' + (value.getMonth() + 1) + '-' + (value.getDate() + 1) + ' ' + value.getHours() + ':' + value.getMinutes() + ':' + value.getSeconds();
 					}
 
 
