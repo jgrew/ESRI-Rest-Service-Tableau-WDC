@@ -81,6 +81,12 @@
 						var value = feature_data[i].attributes[key];
 					}
 
+					if (table.tableInfo.columns[j].dataType == 'datetime') {
+						value = new Date(value);
+						value = value.toString();
+					}
+
+
 					dataObject[key] = value
 
 					// tableau.log(dataObject);
@@ -88,9 +94,7 @@
 					
 				}
 
-				tableData.push(
-					dataObject
-				);
+				tableData.push(dataObject);
 			}
 
 			tableau.log(tableData);
