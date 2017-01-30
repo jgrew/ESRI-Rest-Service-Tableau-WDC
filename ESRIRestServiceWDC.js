@@ -83,7 +83,7 @@
 
 					if (table.tableInfo.columns[j].dataType == 'datetime') {
 						value = new Date(value);
-						value = value.toString();
+						value = value.toString('YYYY-MM-DD HH:mm:ss');
 					}
 
 
